@@ -1,0 +1,31 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+int main(){
+    string word;
+    cin>>word;
+    int n = word.size();
+    int a = 0, b = 0;
+    for(int i = 0; i < n ; i++){
+        if(word[i] >= 'a' && word[i] <= 'z'){
+            word[i] = word[i] - 'a' + 'A';
+            a++;
+
+        }
+
+    }
+    if(a >= n - a){
+        for(auto& x : word){
+            x = tolower(x);
+        }
+        cout<< word;
+    }
+    else{
+        for(auto x : word){
+            cout<< (char)toupper(x);
+        }
+    }
+
+return 0;
+}
