@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    int n;
+
+    // Read the number of words
+    scanf("%d", &n);
+
+    // Process each word
+    for (int i = 0; i < n; ++i) {
+        char word[101];  // Assuming maximum word length is 100
+        scanf("%s", word);
+
+        // Check if the word is too long
+        int len = strlen(word);
+        if (len > 10) {
+            // Replace with abbreviation
+            printf("%c%d%c\n", word[0], len - 2, word[len - 1]);
+        } else {
+            // Keep the word unchanged
+            printf("%s\n", word);
+        }
+    }
+
+    return 0;
+}
