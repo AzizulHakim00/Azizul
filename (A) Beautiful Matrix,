@@ -1,0 +1,60 @@
+#include<stdio.h>
+int main(){
+    int r = 5, c = 5, i, j;
+    int returnR, returnC;
+    int twoDimArr[r][c] ;
+
+    for(i = 0; i < r; i++){
+        for(j = 0; j < c; j++){
+            scanf("%d",&twoDimArr[i][j]);
+        }
+    }
+
+     for(i = 0; i < r; i++){
+        for(j = 0; j < c; j++){
+           if(twoDimArr[i][j] == 1){
+            returnR = i;
+            returnC =j;
+           }
+
+        }
+        printf("\n");
+    }
+    int rowCount = 0 , colmCount =0 ;
+
+    while(returnR != 2){
+        if(returnR > 2 )
+        {
+            returnR--;
+        }
+        else{
+          returnR++;
+        }
+        rowCount++;
+
+    }
+
+    if(returnC > 2 ){
+        while(returnC != 2)
+        {
+            colmCount++;
+            returnC--;
+
+        }
+    }
+    else if(returnC < 2){
+        while(returnC != 2){
+            returnC++;
+            colmCount++;
+        }
+
+
+    }
+
+
+
+    int ans = rowCount + colmCount;
+    printf("%d",ans);
+
+return 0;
+}
