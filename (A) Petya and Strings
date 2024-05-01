@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string firstString, secondString;
+
+    cin >> firstString >> secondString;
+
+    int length = firstString.length();  // Both strings have the same length
+
+    for (int i = 0; i < length; ++i) {
+        char firstChar = tolower(firstString[i]);
+        char secondChar = tolower(secondString[i]);
+
+        if (firstChar < secondChar) {
+            cout << "-1" << endl;
+            return 0;
+        } else if (firstChar > secondChar) {
+            cout << "1" << endl;
+            return 0;
+        }
+    }
+
+    // If we reach here, the strings are equal
+    cout << "0" << endl;
+
+    return 0;
+}
