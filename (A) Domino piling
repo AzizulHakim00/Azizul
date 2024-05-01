@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(){
+    int m , n, a,b;
+    scanf("%d %d",&m,&n);
+    if( n % 2 == 0){
+        n = n / 2;
+        a = n*m;
+    }
+    else{
+        n = n /2;
+        if(m % 2 == 0){
+            b = n*m;
+            m = m /2;
+            a = b+m;
+        }
+        else{
+             b = n*m;
+            m = (m-1)/2;
+            a = b+m;
+        }
+    }
+    printf("%d",a);
+return 0;
+}
