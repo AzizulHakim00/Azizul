@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int n, k;
+
+    // Read input values
+    scanf("%d %d", &n, &k);
+
+    // Array to store the scores
+    int scores[n];
+
+    // Read the scores
+    for (int i = 0; i < n; ++i) {
+        scanf("%d", &scores[i]);
+    }
+
+    // Find the k-th place finisher's score
+    int kthScore = scores[k - 1];
+
+    // Count participants who advance to the next round
+    int participantsAdvancing = 0;
+    for (int i = 0; i < n; ++i) {
+        if (scores[i] >= kthScore && scores[i] > 0) {
+            participantsAdvancing++;
+        }
+    }
+
+    // Print the result
+    printf("%d\n", participantsAdvancing);
+
+    return 0;
+}
